@@ -6,7 +6,11 @@ function TaskList(props) {
       {props.tasks.map((task) => {
         return (
           <li key={task.task}>
-            <p>{task.task}</p>
+            <p>{task.task}
+              {task.done && <span role="img" aria-label="list">
+                ☑️
+            </span>}
+            </p>
           </li>
         );
       })}

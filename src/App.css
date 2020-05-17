@@ -1,3 +1,7 @@
+body{
+  background-color: lightslategrey;
+}
+
 .App {
   text-align: center;
 }
@@ -27,6 +31,19 @@
 .App-link {
   color: #61dafb;
 }
+
+/* My styling */
+
+ul {
+  padding: 0;
+  list-style-type: none;
+  
+}
+
+ul span{
+  padding-left: 20px;
+}
+
 
 @keyframes App-logo-spin {
   from {

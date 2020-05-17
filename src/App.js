@@ -1,7 +1,8 @@
 import React from 'react';
 import './App.css';
 import Header from './Header';
-import TaskList from './TaskList'
+import TaskList from './TaskList';
+import TaskAdder from './TaskAdder';
 
 class App extends React.Component {
   state = {
@@ -12,7 +13,7 @@ class App extends React.Component {
       },
       {
         task: 'Go skate',
-        done: false,
+        done: true,
       },
       {
         task: 'Practice React',
@@ -27,10 +28,20 @@ class App extends React.Component {
     return (
       <div className="App">
         <Header user={this.state.user} />
+        <TaskAdder addNewTask={this.addNewTask} />
         <TaskList tasks={this.state.tasks} />
       </div>
     );
   }
+
+  addNewTask = (newTask) => {
+    this.setState((currentState) => {
+      // const newTaskPlusDone = { ...newTask };
+      // newTaskPlusDone.done = false;
+      // console.dir(newTaskPlusDone)
+      return { tasks: [...currentState.tasks, newTask] };
+    });
+  };
 }
 
 export default App;
